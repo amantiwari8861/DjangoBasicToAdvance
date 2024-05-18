@@ -1,0 +1,37 @@
+python --version
+pip --version
+py -m venv myenv
+myenv\Scripts\activate or myenv/Scripts/activate
+pip install django
+pip freeze
+pip freeze > requirements.txt
+django-admin startproject mywebsite
+cd mywebsite
+py manage.py runserver
+go to chrome and type(http://localhost:8000) in url bar
+
+(do not deactivate environment until i will say )deactivate
+pip install -r requirements.txt
+
+py manage.py runserver 8080
+py manage.py startapp myapp or django-admin startapp myapp1
+
+python manage.py makemigrations formcrudapp
+python manage.py sqlmigrate formcrudapp 0001
+python manage.py check
+python manage.py migrate
+py manage.py createsuperuser
+pip install djangorestframework
+
+
+
+-- register app in mywebsite/settings
+-- create urls.py
+    add 
+    `
+        from django.urls import path
+        from . import views
+        urlpatterns=[path("add/", views.form_update, name="saveform")]
+    `
+-- create static folder
+-- create templates folder 

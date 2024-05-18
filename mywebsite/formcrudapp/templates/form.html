@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <div>
+        <h1>List of students</h1>
+        {% for s in students %}
+            <h1>
+                name:{{s.name}}   mobileno:{{s.mobileno}}
+            </h1>
+        {% endfor %}
+    </div>
+    <form action="" method="post">
+
+    </form>
+    <form action="{% url 'saveform' %}" method="post" >
+        {% csrf_token %}
+        name : <input type="text" name="name" id=""><br>
+        mobile no : <input type="text" name="mobileno" id="">
+        <br>
+       <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>
